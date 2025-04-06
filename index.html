@@ -6,16 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Praticar Números em Português</title>
     <script src="numeros.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <h1>Praticar Números em Português</h1>
     <div>
-        <label>
-            <input type="radio" id="both" name="questionType"> Voz + Texto
-            <input type="radio" id="text" name="questionType" checked> Somente texto
-            <input type="radio" id="voice" name="questionType"> Somente voz
-        </label>
+        <div class="toggle-container">
+            <div class="toggle-option">
+                <input type="radio" id="text" name="questionType" checked>
+                <label for="text">Somente texto</label>
+            </div>
+            <div class="toggle-option">
+                <input type="radio" id="both" name="questionType">
+                <label for="both">Voz + Texto</label>
+            </div>
+            <div class="toggle-option">
+                <input type="radio" id="voice" name="questionType">
+                <label for="voice">Somente voz</label>
+            </div>
+        </div>
         <p id="question"></p>
     </div>
     <input type="text" id="userInput" placeholder="Digite o número em Português">
