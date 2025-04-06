@@ -1,0 +1,39 @@
+.toggle-container {
+    display: flex;
+    gap: 0;
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.toggle-option {
+    position: relative;
+}
+
+.toggle-option input[type="radio"] {
+    display: none;
+}
+
+.toggle-option label {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    margin: 0;
+    font-size: 14px;
+}
+
+.toggle-option:first-child label {
+    border-radius: 4px 0 0 4px;
+}
+
+.toggle-option:last-child label {
+    border-radius: 0 4px 4px 0;
+}
+
+.toggle-option input[type="radio"]:checked+label {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
