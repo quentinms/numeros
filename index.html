@@ -10,29 +10,34 @@
 </head>
 
 <body>
-    <h1>Praticar Números em Português</h1>
-    <div>
-        <div class="toggle-container">
-            <div class="toggle-option">
-                <input type="radio" id="text" name="questionType" checked>
-                <label for="text">Somente texto</label>
-            </div>
-            <div class="toggle-option">
-                <input type="radio" id="both" name="questionType">
-                <label for="both">Voz + Texto</label>
-            </div>
-            <div class="toggle-option">
-                <input type="radio" id="voice" name="questionType">
-                <label for="voice">Somente voz</label>
-            </div>
-        </div>
-        <p id="question"></p>
-    </div>
-    <input type="text" id="userInput" placeholder="Digite o número em Português" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-    <button id="checkButton">Verificar</button>
-    <p id="result"></p>
-    <p id="streak">Sequência: 0</p>
+    <header>
+        <h1>Praticar Números em Português</h1>
+    </header>
+    <main role="main">
+        <div>
+            <fieldset class="toggle-container">
+                <legend>Tipo de pergunta</legend>
 
+                <input type="radio" id="text" name="questionType" checked tabindex="0">
+                <label for="text">Somente texto</label>
+
+                <input type="radio" id="both" name="questionType" tabindex="0">
+                <label for="both">Voz e texto</label>
+
+                <input type="radio" id="voice" name="questionType" tabindex="0">
+                <label for="voice">Somente voz</label>
+            </fieldset>
+            <p id="question"></p>
+        </div>
+        <label for="userInput">Digite o número em Português:</label><br>
+        <input type="text" id="userInput" placeholder="Digite o número em Português" autofocus autocomplete="off" autocorrect="off"
+            autocapitalize="off" spellcheck="false" tabindex="0">
+        <button id="checkButton" tabindex="0">Verificar</button>
+        <p id="result"></p>
+        <p id="streak">Sequência: 0</p>
+    </main>
+    <footer>
+    </footer>
     <script>
         let currentNumber = 0;
         let streak = 0;
