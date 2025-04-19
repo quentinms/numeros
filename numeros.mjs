@@ -110,5 +110,6 @@ export const hundredsInPortuguese = [
   "seiscentos",
   "setecentos",
   "oitocentos",
-  "novecentos"
+  "novecentos",
+  "mil",
 ]

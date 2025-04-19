@@ -46,7 +46,7 @@ if (typeof window !== 'undefined') {
 
     function getRandomNumberAndSpeak() {
         const maxNumber = document.querySelector('input[name="questionRange"]:checked').id;
-        currentNumber = Math.floor(Math.random() * parseInt(maxNumber));
+        currentNumber = Math.floor(Math.random() * (parseInt(maxNumber)+1));
         document.getElementById('question').innerHTML = `O número é <b>${currentNumber}</b>.`;
 
         const questionType = document.querySelector('input[name="questionType"]:checked').id;
