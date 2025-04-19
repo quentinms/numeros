@@ -38,7 +38,7 @@ if (typeof window !== 'undefined') {
     }
 
     function speakCurrentNumber() {
-        const utterance = new SpeechSynthesisUtterance(numbersInPortuguese[currentNumber]);
+        const utterance = new SpeechSynthesisUtterance(toWrittenForm(currentNumber));
         utterance.lang = 'pt-PT';
         utterance.voice = getPortugueseVoice();
         speechSynthesis.speak(utterance);
