@@ -15,7 +15,7 @@
     </header>
     <main role="main">
         <div>
-            <fieldset class="toggle-container">
+            <fieldset name="type" class="toggle-container">
                 <legend>Tipo de pergunta</legend>
 
                 <input type="radio" id="text" name="questionType" checked tabindex="0">
@@ -26,6 +26,18 @@
 
                 <input type="radio" id="voice" name="questionType" tabindex="0">
                 <label for="voice">Somente voz</label>
+            </fieldset>
+            <fieldset name="range" class="toggle-container">
+                <legend>Intervalo de números</legend>
+
+                <input type="radio" id="20" name="questionRange" tabindex="0">
+                <label for="20">0-20</label>
+
+                <input type="radio" id="100" name="questionRange" checked tabindex="0">
+                <label for="100">0-100</label>
+
+                <input type="radio" id="1000" name="questionRange" tabindex="0">
+                <label for="1000">0-1000</label>
             </fieldset>
             <p id="question"></p>
         </div>
@@ -68,7 +80,8 @@
         }
 
         function getRandomNumberAndSpeak() {
-            currentNumber = Math.floor(Math.random() * numbersInPortuguese.length);
+            maxNumber = document.querySelector('input[name="questionRange"]:checked').id;
+            currentNumber = Math.floor(Math.random() * parseInt(maxNumber));
             document.getElementById('question').innerHTML = `O número é <b>${currentNumber}</b>.`;
 
             const questionType = document.querySelector('input[name="questionType"]:checked').id;
@@ -80,7 +93,7 @@
         function checkAnswer() {
             const userInputElement = document.getElementById('userInput');
             const userInput = removeDiacritics(userInputElement.value.trim().toLowerCase());
-            const correctAnswer = numbersInPortuguese[currentNumber];
+            const correctAnswer = toWrittenForm(currentNumber);
             const result = document.getElementById('result');
             if (userInput === removeDiacritics(correctAnswer)) {
                 result.textContent = `Correto! A resposta é ${correctAnswer}.`;
@@ -96,12 +109,30 @@
             userInputElement.value = '';
         }
 
+        function toWrittenForm(number) {
+            if (number <= 100) {
+                return numbersInPortuguese[number];
+            } else if (number % 100 === 0) {
+                return hundredsInPortuguese[number / 100];
+            } else {
+                const hundreds = Math.floor(number / 100);
+                const units = number % 100;
+                return `${hundredsInPortuguese[hundreds]} e ${numbersInPortuguese[units]}`;
+            }
+        }
+
         document.getElementById('checkButton').addEventListener('click', checkAnswer);
 
         document.getElementById('userInput').addEventListener('keypress', (event) => {
             if (event.key === 'Enter') {
                 checkAnswer();
             }
+        });
+
+        document.querySelectorAll('input[name="questionRange"]').forEach((elem) => {
+            elem.addEventListener('change', (event) => {
+                getRandomNumberAndSpeak();
+            });
         });
 
         document.querySelectorAll('input[name="questionType"]').forEach((elem) => {
