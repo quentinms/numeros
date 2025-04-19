@@ -1,4 +1,4 @@
-const numbersInPortuguese = ["zero", "um",
+export const numbersInPortuguese = ["zero", "um",
   "dois",
   "três",
   "quatro",
@@ -100,7 +100,7 @@ const numbersInPortuguese = ["zero", "um",
   "cem"
 ]
 
-const hundredsInPortuguese = [
+export const hundredsInPortuguese = [
   "",
   "cento",
   "duzentos",
