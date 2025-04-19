@@ -99,3 +99,16 @@ const numbersInPortuguese = ["zero", "um",
   "noventa e nove",
   "cem"
 ]
+
+const hundredsInPortuguese = [
+  "",
+  "cento",
+  "duzentos",
+  "trezentos",
+  "quatrocentos",
+  "quinhentos",
+  "seiscentos",
+  "setecentos",
+  "oitocentos",
+  "novecentos"
+]
