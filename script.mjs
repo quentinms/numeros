@@ -18,7 +18,9 @@ if (typeof window !== 'undefined') {
 
     let currentNumber = 0;
     let streak = 0;
-    let maxStreak = 0;
+
+    const LOCAL_STORAGE_KEY = 'maxStreak';
+    let maxStreak = parseInt(localStorage.getItem(LOCAL_STORAGE_KEY)) || 0;
 
     function updateStreak() {
         document.getElementById('streak').textContent = `Sequência: ${streak} (max: ${maxStreak})`;
@@ -67,6 +69,7 @@ if (typeof window !== 'undefined') {
             streak++;
             if (streak > maxStreak) {
                 maxStreak = streak;
+                localStorage.setItem(LOCAL_STORAGE_KEY, maxStreak);
             }
             getRandomNumberAndSpeak();
         } else {
@@ -111,5 +114,6 @@ if (typeof window !== 'undefined') {
         getPortugueseVoice();
     };
 
+    updateStreak();
     getRandomNumberAndSpeak();
 }
