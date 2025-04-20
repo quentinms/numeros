@@ -18,9 +18,10 @@ if (typeof window !== 'undefined') {
 
     let currentNumber = 0;
     let streak = 0;
+    let maxStreak = 0;
 
     function updateStreak() {
-        document.getElementById('streak').textContent = `Sequência: ${streak}`;
+        document.getElementById('streak').textContent = `Sequência: ${streak} (max: ${maxStreak})`;
     }
 
     function removeDiacritics(str) {
@@ -64,6 +65,9 @@ if (typeof window !== 'undefined') {
             result.textContent = `Correto! A resposta é ${correctAnswer}.`;
             result.style.color = "green";
             streak++;
+            if (streak > maxStreak) {
+                maxStreak = streak;
+            }
             getRandomNumberAndSpeak();
         } else {
             result.textContent = `Incorreto. Você digitou "${userInputElement.value}". A resposta correta é ${correctAnswer}.`;
