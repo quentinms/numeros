@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticar Números em Português</title>
+    <script src="script.mjs" type="module"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Praticar Números em Português</h1>
+    </header>
+    <main role="main">
+        <div>
+            <fieldset name="type" class="toggle-container">
+                <legend>Tipo de pergunta</legend>
+
+                <input type="radio" id="text" name="questionType" checked tabindex="0">
+                <label for="text">Somente texto</label>
+
+                <input type="radio" id="both" name="questionType" tabindex="0">
+                <label for="both">Voz e texto</label>
+
+                <input type="radio" id="voice" name="questionType" tabindex="0">
+                <label for="voice">Somente voz</label>
+            </fieldset>
+            <fieldset name="range" class="toggle-container">
+                <legend>Intervalo de números</legend>
+
+                <input type="radio" id="20" name="questionRange" tabindex="0">
+                <label for="20">0-20</label>
+
+                <input type="radio" id="100" name="questionRange" checked tabindex="0">
+                <label for="100">0-100</label>
+
+                <input type="radio" id="1000" name="questionRange" tabindex="0">
+                <label for="1000">0-1000</label>
+            </fieldset>
+            <p id="question"></p>
+        </div>
+        <label for="userInput">Digite o número em Português:</label><br>
+        <input type="text" id="userInput" autofocus autocomplete="off" autocorrect="off"
+            autocapitalize="off" spellcheck="false" tabindex="0">
+        <button id="checkButton" tabindex="0">Verificar</button>
+        <p id="result"></p>
+        <p id="streak"></p>
+    </main>
+    <footer>
+        <hr />
+        > <a href="https://github.com/quentinms/numeros">Source code on Github</a>
+    </footer>
+</body>
+
+</html>
