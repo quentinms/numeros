@@ -23,7 +23,7 @@ if (typeof window !== 'undefined') {
     let maxStreak = parseInt(localStorage.getItem(LOCAL_STORAGE_KEY)) || 0;
 
     function updateStreak() {
-        document.getElementById('streak').textContent = `Sequência: ${streak} (max: ${maxStreak})`;
+        document.getElementById('streak').textContent = `Sequência: ${streak} (maximo: ${maxStreak})`;
     }
 
     function removeDiacritics(str) {
