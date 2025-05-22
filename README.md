@@ -8,10 +8,15 @@ Praticar números em português
 
 Running locally:
 ```sh
-python3 -m http.server 8123 # or whatever your prefered local server is
+npm start 
 ```
 
 Running the tests:
 ```sh
-node script.test.mjs
+npm test
+```
+
+Building:
+```sh
+npm run build
 ```

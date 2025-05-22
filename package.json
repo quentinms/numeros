@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "start": "parcel src/index.html",
+    "build": "parcel build --public-url '.' --no-content-hash src/index.html",
+    "test": "node src/*.test.mjs"
+  },
+  "devDependencies": {
+    "parcel": "latest"
+  }
+}
