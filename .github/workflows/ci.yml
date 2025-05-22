@@ -24,3 +24,11 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Check for uncommitted changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "Error: There are uncommitted changes after build. Please commit all build artifacts before creating a PR."
+            git status
+            exit 1
+          fi
